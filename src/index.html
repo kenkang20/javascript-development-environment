@@ -1,7 +1,19 @@
+<!--
+    http://www.embeddedjs.com
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+    <script>
+        window._trackJs = { 
+            token: "<%=htmlWebpackPlugin.options.trackJSToken%>"
+        };
+    </script>
+    <script src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+    <% } %>
 </head>
 <body>
     <h1>Users</h1>
